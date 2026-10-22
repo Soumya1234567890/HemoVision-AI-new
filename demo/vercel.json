@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "best_logistic_regression_model 2.joblib",
+          "best_logistic_regression_model.joblib",
+          "scaler.joblib",
+          "scaler_pipeline.joblib",
+          "HPLC_data_cleaned (3).csv",
+          "HPLC_data_cleaned (3).xlsx",
+          "server.py",
+          "static/**"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
+    }
+  ]
+}
